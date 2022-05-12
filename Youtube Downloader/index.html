@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Downloader</title>
+    <link rel="shortcut icon" href="dipak.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="title">DIPAKKUMAL</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <div class="link-container">
+            <h1>YouTube Video Downloader</h1>
+            <label for="">Video Link</label>
+            <input type="text" placeholder="Enter the Link" name="link" class="link" required>
+        </div>
+        <div class="formate-container">
+            <label for="">Formate : </label>
+            <select name="" id="" class="formate">
+                <option selected disabled>Select Video Formate</option>
+                <option value="mp3">mp3</option>
+                <option value="mp4a">144p</option>
+                <option value="720">720p</option>
+                <option value="1080">1080p</option>
+                <option value="4k">4k</option>
+                <option value="8k">8k</option>
+            </select>
+        </div>
+        <div class="button-container">
+            <button type="submit" id="btn" class="btn">Convert</button>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $('.btn').click(function(){
+            var link = $('.link').val();
+            var formate = $('.formate').children('option:selected').val();
+            var src = " " + link + "=" + formate + " ";
+            download(link,formate);
+
+            function download(link,formate){
+                $('.button-container').html('<iframe style = "height:50px;border:none;overflow:hidden;" src = "https:loader.to/api/button/?url='+link + '&f=' + formate + '"> </iframe>')
+            }
+
+        })
+    </script>
+</body>
+
+</html>
